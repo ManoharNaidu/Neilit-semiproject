@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href={ % styles 'style.css' %} rel="stylesheet">
+</head>
+<body class="body">
+    <h1 class="h">Welcome to my Website</h1>
+    {% include 'navBar.html' %}
+
+    {% if age > 10 %}
+    <h1 class="h">Hello my name is {{Name}}, I live at {{Address}} and I am styding in {{College}} in {{Sem}}</h1>
+    {% endif %}
+
+    {% if Percentage > 40 %}
+    <h1 class="h">You Pass</h1>
+    
+    {% else %}
+    <h1 class="h">You Fail</h1> 
+
+    {% endif %}
+
+    <h1 class="h">Your Hobbies: </h1>
+    {% for i in Hobbies %}
+    <h2 class="h">{{i}}</h2>
+    {% endfor %}
+<!-- 
+    <form action="" method="POST">
+        {% csrf_token %}
+    <input type="text" name="Name"><br>
+    <input type="number" name="Age"><br>
+    <button type="submit">Click Me</button>
+    </form> -->
+    <form action="/login/" method="GET">
+    <button type="submit">Login</button>
+    </form>
+</body>
+</html>
